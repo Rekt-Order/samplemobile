@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クリモバ - スマホ代が資産になる、新時代の格安SIM</title>
+    <style>
+        :root {
+            --primary: #0052CC;
+            --primary-light: #4C9AFF;
+            --primary-dark: #0747A6;
+            --secondary: #36B37E;
+            --accent: #FF5630;
+            --accent-dark: #DE350B;
+            --background: #F5F7FA;
+            --text-dark: #172B4D;
+            --text-light: #FFF;
+            --text-gray: #5E6C84;
+            --highlight-yellow: #FFAB00;
+            --border-radius: 10px;
+            --box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 1.8rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+        
+        .cta-button {
+            background-color: var(--accent);
+            color: var(--text-light);
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(222, 53, 11, 0.25);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(222, 53, 11, 0.3);
+            background-color: var(--accent-dark);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--text-light);
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI3NjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9IndhdmUiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMTAgMTAiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAgNUMxMCAyLjI0IDcuNzYgMCA1IDBTMCAyLjI0IDAgNXMyLjI0IDUgNSA1IDUtMi4yNCA1LTV6TTUgOEM2LjY2IDggOCA2LjY2IDggNVM2LjY2IDIgNSAyIDAgMy4zNCAwIDVzMS4zNCAzIDMgM3oiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3dhdmUpIi8+PC9zdmc+');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .price-tag {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .price-tag small {
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+        
+        .campaign-badge {
+            background-color: var(--accent);
+            color: var(--text-light);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            transform: rotate(-2deg);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-gray);
+            font-size: 1.2rem;
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .benefit-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .benefit-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .plan-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .plan-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .plan-card.popular::before {
+            content: "人気";
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            transform: rotate(45deg) translate(30%, -50%);
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .plan-data {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .plan-price {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .plan-price small {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        .plan-token {
+            background-color: rgba(106, 90, 205, 0.1);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+        }
+        
+        .plan-token-value {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .plan-features {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .plan-features li {
+            margin-bottom: 0.5rem;
+            list-style-type: none;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .plan-features li::before {
+            content: "✓";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .how-it-works {
+            background-color: #F0F0FF;
+        }
+        
+        .steps {
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .step-number {
+            background-color: var(--primary);
+            color: var(--text-light);
+            font-size: 3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            min-width: 120px;
+        }
+        
+        .step-content {
+            padding: 2rem;
+        }
+        
+        .step h3 {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .comparison {
+            overflow-x: auto;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto 2rem;
+            background: white;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary);
+            color: var(--text-light);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table td.highlight {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .comparison-table td.best {
+            position: relative;
+        }
+        
+        .comparison-table td.best::after {
+            content: "最安値";
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.7rem;
+        }
+        
+        .value-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+        
+        .value-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .value-label {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+        
+        .testimonials {
+            background-color: #F0FFF0;
+        }
+        
+        .testimonial-cards {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            min-width: 300px;
+            flex: 1;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 5rem;
+            color: rgba(106, 90, 205, 0.1);
+            line-height: 1;
+        }
+        
+        .testimonial-card .quote {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-card .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            background-color: #eee;
+        }
+        
+        .token-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .token-benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+        
+        .token-benefit-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:after {
+            content: "+";
+            font-size: 1.5rem;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--text-light);
+            padding: 5rem 2rem;
+        }
+        
+        .cta-section h2 {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+        }
+        
+        .cta-section p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.3rem;
+        }
+        
+        .cta-big-button {
+            background-color: var(--accent);
+            color: var(--text-light);
+            border: none;
+            padding: 1.2rem 3.5rem;
+            border-radius: var(--border-radius);
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-big-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+        }
+        
+        .campaign-timer {
+            background-color: rgba(0,0,0,0.15);
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background-color: #333;
+            color: var(--text-light);
+            padding: 4rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            color: #ddd;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-column ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--text-light);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #444;
+            color: #999;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .price-tag {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .step {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                min-width: auto;
+                padding: 1rem;
+            }
+        }
+    </style>
+    <script>
+        // Simple script to handle FAQ accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle FAQ item clicks
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                // Initially hide all answers
+                answer.style.display = 'none';
+                
+                question.addEventListener('click', function() {
+                    // Toggle the answer visibility
+                    if (answer.style.display === 'none') {
+                        answer.style.display = 'block';
+                        question.style.color = 'var(--primary)';
+                        question.style.borderBottom = '1px solid #eee';
+                        question.setAttribute('aria-expanded', 'true');
+                        question.innerHTML = question.innerHTML.replace('+', '−');
+                    } else {
+                        answer.style.display = 'none';
+                        question.style.color = 'var(--text-dark)';
+                        question.style.borderBottom = 'none';
+                        question.setAttribute('aria-expanded', 'false');
+                        question.innerHTML = question.innerHTML.replace('−', '+');
+                    }
+                });
+            });
+
+            // Countdown timer for campaign
+            const countdownElement = document.querySelector('.campaign-timer');
+            if (countdownElement) {
+                let days = 3;
+                let hours = 23;
+                let minutes = 59;
+                
+                function updateCountdown() {
+                    minutes--;
+                    if (minutes < 0) {
+                        minutes = 59;
+                        hours--;
+                        if (hours < 0) {
+                            hours = 23;
+                            days--;
+                            if (days < 0) {
+                                countdownElement.textContent = "キャンペーン終了しました";
+                                return;
+                            }
+                        }
+                    }
+                    countdownElement.textContent = `キャンペーン終了まで残り ${days}日 ${hours}時間 ${minutes}分!`;
+                    setTimeout(updateCountdown, 60000); // Update every minute
+                }
+                
+                updateCountdown();
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">クリモバ</div>
+            <nav>
+                <ul>
+                    <li><a href="#plans">料金プラン</a></li>
+                    <li><a href="#benefits">特徴・メリット</a></li>
+                    <li><a href="#how-it-works">申込み方法</a></li>
+                    <li><a href="#comparison">他社比較</a></li>
+                    <li><a href="#faq">よくある質問</a></li>
+                </ul>
+            </nav>
+            <button class="cta-button">即日開通で申し込む</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="esim-badge">eSIM対応で最短当日開通！</div>
+            <div class="campaign-badge">今なら初期費用0円！</div>
+            <h1>スマホ代が<span class="highlight-accent">資産</span>に変わる<br>次世代モバイル</h1>
+            <p>最短<span class="esim-highlight">当日開通</span>、月々の支払いで資産形成。<br>業界初、利用料の<span class="highlight-accent">10%</span>がトークンで還元！</p>
+            <div class="price-tag">2,178<small>円/月〜</small></div>
+            <div class="hero-buttons">
+                <button class="cta-button">最短3分で申し込む</button>
+                <button class="cta-button" style="background-color: transparent; border: 2px solid white;">料金プランを見る</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="section">
+        <h2>クリモバのお得ポイント</h2>
+        <p class="section-subtitle">スマホ代を払うだけで、こんなにお得に</p>
+        <div class="benefits">
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>最大10%還元</h3>
+                <p>月々のスマホ代の最大10%相当がトークンとして還元。一般的なポイント還元とは違い、将来価値が成長する可能性があります。</p>
+                <div class="benefit-value">年間最大5,227円相当</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">👑</div>
+                <h3>業界最安値水準</h3>
+                <p>大手キャリアの半額以下の料金プランで、通信品質はそのまま。トークン還元はこの基本料金に加えてのボーナスです。</p>
+                <div class="benefit-value">年間最大57,864円節約</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🔑</div>
+                <h3>特別コミュニティ</h3>
+                <p>トークン保有者だけの特別コミュニティに参加でき、サービスの未来を一緒に作れます。意思決定にも参加できる新しい関係性。</p>
+                <div class="benefit-value">コミュニティにも参加できる！</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="plans" class="section">
+        <h2>シンプルでわかりやすい料金プラン</h2>
+        <p class="section-subtitle">あなたの使い方にぴったりのプランが見つかる</p>
+        <div class="plan-cards">
+            <div class="plan-card">
+                <div class="plan-name">ライト</div>
+                <div class="plan-data">3GB</div>
+                <div class="plan-price">990<small>円/月</small></div>
+                <div class="plan-token">トークン還元: <span class="plan-token-value">最大198円相当/月</span></div>
+                <ul class="plan-features">
+                    <li>国内通話：10円/30秒</li>
+                    <li>5分かけ放題：+550円</li>
+                    <li>データ繰越可能</li>
+                    <li>契約期間の縛りなし</li>
+                </ul>
+                <button class="cta-button">このプランを申し込む</button>
+            </div>
+            <div class="plan-card popular">
+                <div class="plan-name">スタンダード</div>
+                <div class="plan-data">20GB</div>
+                <div class="plan-price">2,178<small>円/月</small></div>
+                <div class="plan-token">トークン還元: <span class="plan-token-value">最大435円相当/月</span></div>
+                <ul class="plan-features">
+                    <li>国内通話：10円/30秒</li>
+                    <li>5分かけ放題：+550円</li>
+                    <li>データ繰越可能</li>
+                    <li>契約期間の縛りなし</li>
+                    <li>特典：初月トークン還元2倍</li>
+                </ul>
+                <button class="cta-button">このプランを申し込む</button>
+            </div>
+            <div class="plan-card">
+                <div class="plan-name">プレミアム</div>
+                <div class="plan-data">無制限</div>
+                <div class="plan-price">3,278<small>円/月</small></div>
+                <div class="plan-token">トークン還元: <span class="plan-token-value">最大655円相当/月</span></div>
+                <ul class="plan-features">
+                    <li>国内通話：10円/30秒</li>
+                    <li>かけ放題：標準搭載</li>
+                    <li>5G対応高速通信</li>
+                    <li>契約期間の縛りなし</li>
+                    <li>特典：トークン保有者特別サポート</li>
+                </ul>
+                <button class="cta-button">このプランを申し込む</button>
+            </div>
+        </div>
+    <section class="value-highlights-section">
+        <div class="value-highlights">
+            <div class="value-card">
+                <div class="value-number">3分</div>
+                <div class="value-label">最短申込み時間</div>
+            </div>
+            <div class="value-card">
+                <div class="value-number">0円</div>
+                <div class="value-label">事務手数料<br>（通常3,300円）</div>
+            </div>
+            <div class="value-card">
+                <div class="value-number">最短当日</div>
+                <div class="value-label">eSIM対応で即日開通も！</div>
+            </div>
+            <div class="value-card">
+                <div class="value-number">10%</div>
+                <div class="value-label">トークン還元率</div>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <section id="how-it-works" class="section how-it-works">
+        <h2 class="highlighted-title"><span class="highlight-accent">eSIM対応</span>で<span class="highlight-text">最短当日</span>開通</h2>
+        <p class="section-subtitle">物理SIMカードの到着を待たずに、今すぐ使い始められる</p>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>オンラインで簡単申し込み</h3>
+                    <p>データ容量に応じたプランを選択し、必要情報を入力するだけ。申込みは<span class="highlight-text">最短3分</span>で完了します。本人確認書類のアップロードも簡単です。</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3><span class="esim-highlight">eSIMをダウンロード</span></h3>
+                    <p>申込完了後すぐにeSIMプロファイルが発行。スマホでQRコードをスキャンするだけで<span class="highlight-text">最短当日開通</span>。物理SIMカードの到着を待つ必要はありません。</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>使うだけでトークンが貯まる</h3>
+                    <p>月々のご利用料金に応じて10%相当のトークンが自動的に還元。専用アプリで残高確認や資産価値の成長が簡単に確認できます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparison" class="section">
+        <h2>他社との比較</h2>
+        <p class="section-subtitle">価格だけでなく、資産性でも圧倒的な違い</p>
+        <div class="comparison">
+            <table class="comparison-table">
+                <tr>
+                    <th></th>
+                    <th>クリモバ</th>
+                    <th>大手キャリア</th>
+                    <th>一般的な格安SIM</th>
+                    <th>カブアンド</th>
+                </tr>
+                <tr>
+                    <td>月額料金(20GB)</td>
+                    <td class="highlight best">2,178円</td>
+                    <td>7,000円以上</td>
+                    <td>2,200円前後</td>
+                    <td>2,980円</td>
+                </tr>
+                <tr>
+                    <td>年間コスト</td>
+                    <td class="highlight">26,136円</td>
+                    <td>84,000円以上</td>
+                    <td>26,400円前後</td>
+                    <td>35,760円</td>
+                </tr>
+                <tr>
+                    <td>還元率</td>
+                    <td class="highlight">最大10%</td>
+                    <td>0〜10%</td>
+                    <td>0〜5%</td>
+                    <td>約7%</td>
+                </tr>
+                <tr>
+                    <td>還元形式</td>
+                    <td class="highlight">成長する可能性のあるトークン</td>
+                    <td>ポイント(固定価値)</td>
+                    <td>ポイント(固定価値)</td>
+                    <td>株(配当のみ)</td>
+                </tr>
+                <tr>
+                    <td>換金性</td>
+                    <td class="highlight">即時可能</td>
+                    <td>条件付き</td>
+                    <td>条件付き</td>
+                    <td>不可(株式)</td>
+                </tr>
+                <tr>
+                    <td>意思決定参加</td>
+                    <td class="highlight">可能</td>
+                    <td>不可</td>
+                    <td>不可</td>
+                    <td>限定的</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section class="section testimonials">
+        <h2>利用者の声</h2>
+        <p class="section-subtitle">実際に利用してわかった、クリモバの魅力</p>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <p class="quote">「最初はトークンという言葉に抵抗がありましたが、実際に使ってみると普通の格安SIMと変わらない使い心地で、しかも毎月トークンが増えていくのが楽しみになりました。半年で約8,000円相当が貯まりました！」</p>
+                <div class="author">
+                    <div class="author-image"></div>
+                    <div>
+                        <strong>佐藤さん（32歳）</strong><br>
+                        <small>利用期間: 6ヶ月</small>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">「カブアンドからの乗り換えでしたが、月額料金が安くなった上にトークンの即時換金性が気に入っています。同じトークンを持つ方と交流できるコミュニティも魅力の１つです。」</p>
+                <div class="author">
+                    <div class="author-image"></div>
+                    <div>
+                        <strong>田中さん（45歳）</strong><br>
+                        <small>利用期間: 4ヶ月</small>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">「ポイ活が趣味でしたが、トークンの方が将来性を感じます。実際、私の場合は3ヶ月で還元トークンの価値が15%アップしました。同じ還元率でも将来の価値が違うのは大きいですね。」</p>
+                <div class="author">
+                    <div class="author-image"></div>
+                    <div>
+                        <strong>鈴木さん（29歳）</strong><br>
+                        <small>利用期間: 3ヶ月</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>トークン還元の仕組み</h2>
+        <p class="section-subtitle">単なるポイントとは違う、資産性のある還元システム</p>
+        <div class="token-benefits">
+            <div class="token-benefit-card">
+                <div class="token-benefit-icon">💎</div>
+                <h3>将来価値の成長</h3>
+                <p>クリモバトークンは、エコシステムの成長とともに価値が上昇する可能性があります。使えば使うほど、将来の資産形成につながります。</p>
+            </div>
+            <div class="token-benefit-card">
+                <div class="token-benefit-icon">💱</div>
+                <h3>自由な換金性</h3>
+                <p>貯まったトークンはいつでも自由に換金可能。専用アプリからワンタップで日本円に交換できるので、急な出費にも対応できます。</p>
+            </div>
+            <div class="token-benefit-card">
+                <div class="token-benefit-icon">🔐</div>
+                <h3>特別コミュニティ</h3>
+                <p>トークン保有者限定のコミュニティに参加でき、新機能の先行体験やサービス開発の投票権を得られます。あなたの声がサービスを作ります。</p>
+            </div>
+            <div class="token-benefit-card">
+                <div class="token-benefit-icon">📈</div>
+                <h3>長期保有特典</h3>
+                <p>トークンを長期保有するほど特典が拡大。限定イベントや限定コンテンツへのアクセス権など、ユニークな特典が増えていきます。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <h2>よくある質問</h2>
+        <p class="section-subtitle">わからないことはここで解決</p>
+        <div class="faq">
+            <div class="faq-item">
+                <div class="faq-question">トークンって何ですか？ポイントとどう違うの？</div>
+                <div class="faq-answer">
+                    <p>トークンは、ブロックチェーン技術を基盤としたデジタル資産です。一般的なポイントとの大きな違いは、価値が変動する可能性があることと、自由に取引や移動ができる点です。ポイントは発行元でしか使えませんが、トークンはあなた自身が所有し、将来価値が上がれば、その恩恵をそのまま受けられます。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">通信品質は大丈夫ですか？</div>
+                <div class="faq-answer">
+                    <p>当サービスはドコモの回線を利用しているため、全国主要エリアで安定した通信品質をご提供しています。また、5G対応プランもご用意しており、大手キャリアと同等の高速通信を格安でご利用いただけます。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">他社からの乗り換え（MNP）は簡単ですか？</div>
+                <div class="faq-answer">
+                    <p>はい、とても簡単です。お申し込み時に現在の電話番号と、現在のキャリアから発行されるMNP予約番号をご用意いただくだけで、番号そのままでの乗り換えが可能です。また、MNP手続きに不安がある方向けに「乗り換えコンシェルジュサービス」を無料でご提供しています。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">もらったトークンはどうやって現金化できますか？</div>
+                <div class="faq-answer">
+                    <p>専用アプリからいつでも簡単に現金化が可能です。トークン取引所への送付機能や、日本円への交換機能を備えており、還元されたトークンをすぐに現金化することもできますし、長期保有して価値の上昇を期待することもできます。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">トークン保有者限定の特典はどんなものがありますか？</div>
+                <div class="faq-answer">
+                    <p>トークン保有者限定イベントへの参加や新サービス開発の投票権、保有量に応じた追加特典をご用意しています。トークンを長期保有いただくほど、特典も拡大していく仕組みです。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="campaign-timer">キャンペーン終了まで残り 3日!</div>
+        <h2 class="highlighted-title">スマホ代が<span class="highlight-text">資産</span>になる時代へ</h2>
+        <p>初期費用0円、さらに最初の3ヶ月はトークン還元率2倍！<br><span class="highlight-accent">eSIM対応</span>で申込み当日から使えるので、この機会をお見逃しなく。</p>
+        <a href="#" class="cta-big-button">最短当日開通で申し込む</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>サービス</h3>
+                <ul>
+                    <li><a href="#">料金プラン</a></li>
+                    <li><a href="#">オプションサービス</a></li>
+                    <li><a href="#">トークン還元システム</a></li>
+                    <li><a href="#">コミュニティ特典</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>サポート</h3>
+                <ul>
+                    <li><a href="#">よくある質問</a></li>
+                    <li><a href="#">契約・解約について</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                    <li><a href="#">サポートチャット</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>会社情報</h3>
+                <ul>
+                    <li><a href="#">会社概要</a></li>
+                    <li><a href="#">プライバシーポリシー</a></li>
+                    <li><a href="#">利用規約</a></li>
+                    <li><a href="#">特定商取引法に基づく表記</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>コミュニティ</h3>
+                <ul>
+                    <li><a href="#">公式Twitter</a></li>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">ブログ</a></li>
+                    <li><a href="#">トークンエコノミー解説</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 クリプトニンジャモバイル All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>
